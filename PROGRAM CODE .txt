@@ -1,0 +1,62 @@
+PROGRAM CODE 
+ 
+ORG 00H  
+SJMP MAIN  
+ORG 300H 
+TBL: DB 90H,80H,0F8H,82H,92H,99H,0B0H,0A4H,0F9H,0C0H 
+  
+MAIN:MOV DPTR,#300H 
+     MOV R3,#0AH 
+     MOV A,#56H 
+     MOV P1,A 
+BACK:CLR A 
+     MOVC A,@A+DPTR 
+     MOV P0,A 
+     ACALL DELAY1 
+     INC DPTR 
+     DJNZ R3,BACK 
+ 
+     MOV DPTR,#300H 
+     MOV R3,#0AH 
+     MOV A,#59H 
+     MOV P1,A 
+BACK1:CLR A 
+     MOVC A,@A+DPTR 
+     MOV P0,A 
+     ACALL DELAY1 
+     INC DPTR 
+     DJNZ R3,BACK1 
+   
+     MOV DPTR,#300H 
+     MOV R3,#0AH 
+     MOV A,#65H 
+     MOV P1,A 
+BACK2:CLR A 
+     MOVC A,@A+DPTR 
+     MOV P0,A 
+     ACALL DELAY1 
+     INC DPTR 
+     DJNZ R3,BACK2 
+       
+     MOV DPTR,#300H 
+     MOV R3,#0AH 
+     MOV A,#95H 
+     MOV P1,A 
+BACK3:CLR A 
+     MOVC A,@A+DPTR 
+     MOV P0,A 
+     ACALL DELAY1 
+     INC DPTR 
+     DJNZ R3,BACK3 
+     SJMP MAIN 
+   
+DELAY1:MOV TMOD,#10H 
+       MOV R0,#14H 
+REPEAT:MOV TL1,#0B0H 
+       MOV TH1,#3CH 
+       MOV TCON,#40H 
+WAIT:JNB TF1,WAIT 
+      MOV TCON,#00H 
+      DJNZ R0,REPEAT 
+      RET 
+END
