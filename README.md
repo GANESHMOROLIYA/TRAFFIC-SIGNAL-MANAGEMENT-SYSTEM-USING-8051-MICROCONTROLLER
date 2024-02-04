@@ -1,5 +1,8 @@
 # TRAFFIC-SIGNAL-MANAGEMENT-SYSTEM-USING-8051-MICROCONTROLLER
  we made this project in our  Engineering 3rd year 5th semester in Microcontroller and Interfacing Subject
+
+ 
+ 
  Traffic control is the big issue in today’s era. Traffic jam is one of the major problems in  densely populated 
 cities whereas their population and number of running vehicles are much more than their capacity. Faulty 
 traffic signaling systems, inadequate manpower, narrow road spaces and overtaking tendency of drivers create 
